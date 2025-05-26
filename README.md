@@ -10,9 +10,9 @@ Ce dépôt contient les ressources de cours et supports associés pour la pério
 - 🇬🇧 **Anglais Général** : 15:15 - 17:15  
 
 ### **Mardi 3 juin**
-- ➗ **Analyse mathématique** : 09:00 - 11:45  
-- ⚡ **Électronique & Électricité** : 13:00 - 15:00  
-- 💻 **Architecture des ordinateurs** : 15:15 - 16:15  
+- ➗ [**Analyse mathématique**](https://github.com/AirWanFR/EPITAFF-Partiels/tree/master/analyse-maths) : 09:00 - 11:45  
+- ⚡ [**Électronique & Électricité**](https://github.com/AirWanFR/EPITAFF-Partiels/tree/master/electronique-electricite) : 13:00 - 15:00  
+- 💻 [**Architecture des ordinateurs**](https://github.com/AirWanFR/EPITAFF-Partiels/tree/master/archi-ordinateurs) : 15:15 - 16:15  
 
 ### **Mercredi 4 juin**
 - 📈 **Performance et mémoire en langage C** : 09:00 - 11:45  
