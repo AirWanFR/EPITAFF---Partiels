@@ -17,7 +17,7 @@ Ce dépôt contient les ressources de cours et supports associés pour la pério
 ### **Mercredi 4 juin**
 - 📈 **Performance et mémoire en langage C** : 09:00 - 11:45  
 - 🐧 **Système d'exploitation Linux** : 12:00 - 13:30  
-- 🧠 **Algorithmique et structures de données** : 14:30 - 17:15  
+- 🧠 [**Algorithmique et structures de données**](https://github.com/AirWanFR/EPITAFF-Partiels/tree/master/algorithmique) : 14:30 - 17:15  
 
 ### **Jeudi 5 juin**
 - 🌐 **Réseaux 2** : 09:00 - 11:45  
@@ -38,7 +38,7 @@ Ce dépôt contient les ressources de cours et supports associés pour la pério
 ├── archi-ordinateurs/
 ├── performance-C/
 ├── linux-systeme/
-├── algo-structures/
+├── algorithmique/
 ├── reseaux-2/
 ├── arithmetique-crypto/
 └── admin-linux/
