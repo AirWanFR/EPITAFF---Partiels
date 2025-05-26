@@ -1,150 +1,90 @@
-Voici une **fiche de révision détaillée** suivie de la **correction du quiz** avec le format demandé :
+## 📜 FICHE DE RÉVISION – Analyse Mathématique (Examen Final)
+
+### 1. ✅ Sommes Finies
+
+#### 🔹 Définitions :
+
+* Somme partielle :
+  Sn = somme de k=0 à n de u\_k
+
+#### 🔹 Formules usuelles :
+
+* somme de k=1 à n de k = n(n+1)/2
+* somme de k=1 à n de k^2 = n(n+1)(2n+1)/6
+* somme de k=0 à n de (a + kr) = (n+1)(2a + nr)/2
+* Suite géométrique (si q != 1) : somme de k=0 à n de aq^k = a \* (1 - q^{n+1}) / (1 - q)
 
 ---
 
-## 🧠 FICHE DE RÉVISION DÉTAILLÉE
+### 2. ✅ Limites (composition, comparaison, encadrement)
+
+#### 🔹 Limites usuelles :
+
+* 1 / n^k tend vers 0
+* a^n tend vers 0 si 0 < a < 1, vers +∞ si a > 1, diverge si a < -1
+* ln(n) tend vers +∞
+
+#### 🔹 Méthodes :
+
+* Théorème des gendarmes : si a\_n ≤ b\_n ≤ c\_n et lim a\_n = lim c\_n = L, alors lim b\_n = L
+* Comparaison : si a\_n ≤ b\_n, alors lim a\_n ≤ lim b\_n
+* Composition : utiliser des limites connues pour en déduire d'autres
 
 ---
 
-### 1. 🔌 Logique Combinatoire
+### 3. ✅ Équivalents, Petit o et Grand O
 
-#### 🔸 Définition
+#### 🔹 Équivalence :
 
-La **logique combinatoire** désigne des circuits dont les **sorties dépendent uniquement de l’état présent des entrées**, sans aucune mémoire d’état antérieur.
+* u\_n \~ v\_n ssi lim u\_n / v\_n = 1
 
-#### 🔸 Portes logiques de base
+#### 🔹 Petit o :
 
-| Porte              | Symbole  | Fonction                              |
-| ------------------ | -------- | ------------------------------------- |
-| NON (NOT)          | ¬A       | Inverse une entrée                    |
-| ET (AND)           | A · B    | Sortie = 1 si A = 1 et B = 1          |
-| OU (OR)            | A + B    | Sortie = 1 si A = 1 ou B = 1          |
-| OU Exclusif (XOR)  | A ⊕ B    | Sortie = 1 si une seule entrée vaut 1 |
-| NON-ET (NAND)      | ¬(A · B) | Sortie inversée de l’ET               |
-| NON-OU (NOR)       | ¬(A + B) | Sortie inversée de l’OR               |
-| Équivalence (XNOR) | ¬(A ⊕ B) | Sortie = 1 si A = B                   |
+* u\_n = o(v\_n) ssi lim u\_n / v\_n = 0
 
-#### 🔸 Table de vérité
+#### 🔹 Grand O :
 
-Un tableau indiquant les sorties pour toutes les combinaisons possibles des entrées.
+* u\_n = O(v\_n) ssi il existe C > 0 et n\_0 tel que pour tout n ≥ n\_0, |u\_n| ≤ C|v\_n|
 
-#### 🔸 Algèbre de Boole
+#### 🔹 Exemples :
 
-Utilisée pour la **simplification des fonctions logiques** :
-
-* **Identités fondamentales :**
-
-  * $A + \overline{A} = 1$
-  * $A \cdot \overline{A} = 0$
-  * $A + 0 = A$, $A \cdot 1 = A$
-
-* **Théorèmes de De Morgan :**
-
-  * $\overline{A + B} = \overline{A} \cdot \overline{B}$
-  * $\overline{A \cdot B} = \overline{A} + \overline{B}$
-
-#### 🔸 Simplification (Méthode de Karnaugh)
-
-* Grille 2x2, 4x4, etc.
-* Regrouper les 1 (ou les 0) en blocs de 2, 4, 8…
-* Objectif : **réduire le nombre de termes et donc de portes logiques**
-
-#### 🔸 Circuits combinatoires courants
-
-* **Additionneur complet** : addition de deux bits + retenue
-* **Multiplexeur (MUX)** : sélectionne une entrée parmi plusieurs selon les lignes de sélection
-* **Décodeur/Démultiplexeur** : active une sortie unique selon un code binaire en entrée
-* **Encodeur** : donne un code binaire correspondant à une entrée active
+* n^2 + n \~ n^2 donc n = o(n^2)
+* 1 / (n^2 + 1) \~ 1 / n^2
+* ln(n) = o(n^a) pour tout a > 0
 
 ---
 
-### 2. ⏱ Logique Séquentielle (jusqu’aux compteurs)
+### 4. ✅ Complexité
 
-#### 🔸 Définition
+#### 🔹 Croissances classiques :
 
-Un **circuit séquentiel** a des **sorties qui dépendent des entrées et de l’état précédent** → implique une **mémoire**.
+* ln(n) << n^a << n^a ln(n)^b << a^n << n!
+* Cela permet d'évaluer le temps d'exécution d'un algorithme
 
-#### 🔸 Bascules (latches & flip-flops)
+#### 🔹 À savoir :
 
-| Type               | Description                                                                                  |
-| ------------------ | -------------------------------------------------------------------------------------------- |
-| **RS**             | Set-Reset, 2 entrées : S (Set), R (Reset). État mémoire si S = R = 0. Interdit si S = R = 1. |
-| **RS avec Enable** | Active uniquement quand E = 1. Sinon conserve l’état.                                        |
-| **D (Data)**       | Q ← D à chaque front d’horloge (CLK)                                                         |
-| **JK**             | Version améliorée de RS où J=K=1 ⇨ bascule d’état                                            |
-| **T (Toggle)**     | Change d’état à chaque front actif                                                           |
+* u\_n = O(v\_n) signifie que u\_n ne croît pas plus vite que v\_n
+* u\_n = o(v\_n) signifie que u\_n est négligeable devant v\_n
 
-#### 🔸 Synchronisation
+---
 
-* **Asynchrone** : changement dès qu’une entrée change
-* **Synchrone** : changement au **front montant de l’horloge**
+### 5. 📊 Introduction à la complexité (extraits du Cours n°1)
 
-#### 🔸 Compteurs
+* Objectif : étudier le temps d’exécution des algorithmes
+* Exemple comparatif : brute-force (n^3) vs Dijkstra (n^2 log n)
+* Temps d'exécution estimé selon la taille d'entrée
+* Notions importantes :
 
-Basés sur des **bascules T ou D**. Permettent de compter :
-
-* Des **impulsions**
-* D’implémenter des **automates** (états successifs)
+  * Suites définies par un terme général ou une récurrence
+  * Sens de variation : croissante, décroissante, bornée
+  * Représentation graphique (non évaluée à l'examen)
+  * Raisonnement par récurrence (non au programme)
 
 Exemples :
 
-* **Compteur binaire 3 bits** : compte de 0 à 7 (000 à 111)
-* **Compteur modulo N** : revient à 0 après N-1
+* u\_n = 3n : strictement croissante
+* u\_n = (1/3)^n : strictement décroissante
+* u\_n = (−1)^n : bornée mais non monotone
 
----
-
-### 3. 🖥 Assembleur Motorola 68000
-
-#### 🔸 Processeur
-
-* Architecture **16/32 bits**, 24 bits pour les adresses
-* Exécute des instructions très proches du matériel
-
-#### 🔸 Registres
-
-| Type         | Noms                                      | Rôle                                |
-| ------------ | ----------------------------------------- | ----------------------------------- |
-| **Données**  | D0 à D7                                   | Stockage temporaire de données      |
-| **Adresses** | A0 à A6                                   | Pointeurs d’adresses                |
-| **Pile**     | A7                                        | Stack pointer (SSP ou USP)          |
-| **PC**       | Program Counter                           | Adresse de la prochaine instruction |
-| **SR/CCR**   | Status Register / Condition Code Register | Drapeaux : Z, N, V, C, X            |
-
-#### 🔸 Taille d’opérande
-
-* `.B` = Byte (8 bits)
-* `.W` = Word (16 bits)
-* `.L` = Long (32 bits)
-
-#### 🔸 Instructions courantes
-
-| Catégorie        | Instructions                         |
-| ---------------- | ------------------------------------ |
-| **Transfert**    | `MOVE`, `LEA`, `CLR`                 |
-| **Arithmétique** | `ADD`, `SUB`, `MULS`, `MULU`, `DIVS` |
-| **Logique**      | `AND`, `OR`, `EOR`, `NOT`, `NEG`     |
-| **Branchement**  | `BRA`, `BNE`, `BEQ`, `BGE`, `BLT`... |
-| **Trap système** | `TRAP #15` → affichage dans Sim68K   |
-| **Autres**       | `CMP`, `TST`, `EXG`, `STOP`          |
-
-#### 🔸 Modes d’adressage
-
-* **Immédiat** : `#valeur`
-* **Direct** : `D0`, `A0`
-* **Indirect** : `(A0)`, `(A0)+`, `-(A0)`
-* **Indexé** : `d(A0,D1.L)`
-
-#### 🔸 Exemple de code
-
-```asm
-MOVE.B #45, D0
-ADD.B #85, D0
-TRAP #15 ; affiche le caractère correspondant
-```
-
-#### 🔸 Astuces et erreurs courantes
-
-* `ADDI.B #$12345, D5` ❌ → dépasse 8 bits !
-* Toujours adapter la taille : si >255, utiliser `.W` ou `.L`
-
-
+Conclusion :
+Connaître les suites, leur comportement asymptotique, et les comparaisons permet de comprendre l'efficacité des algorithmes et leur complexité.
