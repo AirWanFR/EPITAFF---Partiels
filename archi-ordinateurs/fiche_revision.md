@@ -1,7 +1,3 @@
-Voici une **fiche de révision détaillée** suivie de la **correction du quiz** avec le format demandé :
-
----
-
 ## 🧠 FICHE DE RÉVISION DÉTAILLÉE
 
 ---
