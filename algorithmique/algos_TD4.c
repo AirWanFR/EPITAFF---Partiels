@@ -1,3 +1,12 @@
+#include <stddef.h>
+
+struct node
+{
+    int cle;
+    struct node *fg;
+    struct node *fd;
+};
+
 int find_char(char *str, char c, int index)
 {
     int len = strlen(str);
