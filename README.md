@@ -5,7 +5,7 @@ Ce dépôt contient les ressources de cours et supports associés pour la pério
 ## 🗓️ Planning des Partiels
 
 ### **Lundi 2 juin**
-- 🐍 **Python pour la sécurité** : 09:00 - 11:45  
+- 🐍 [**Python pour la sécurité**](https://github.com/AirWanFR/EPITAFF-Partiels/tree/master/python-securite) : 09:00 - 11:45  
 - 🇬🇧 **Anglais Technique** : 13:00 - 15:00  
 - 🇬🇧 **Anglais Général** : 15:15 - 17:15  
 
@@ -21,7 +21,7 @@ Ce dépôt contient les ressources de cours et supports associés pour la pério
 
 ### **Jeudi 5 juin**
 - 🌐 **Réseaux 2** : 09:00 - 11:45  
-- 🔢 **Arithmétique pour la cryptographie** : 13:00 - 15:45  
+- 🔢 [**Arithmétique pour la cryptographie**](https://github.com/AirWanFR/EPITAFF-Partiels/tree/master/arithmetique-crypto) : 13:00 - 15:45  
 - 🛠️ **Administration Linux** : 16:00 - 18:45  
 
 ## 📁 Structure du dépôt
