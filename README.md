@@ -5,7 +5,7 @@ Ce dépôt contient les ressources de cours et supports associés pour la pério
 ## 🗓️ Planning des Partiels
 
 ### **Lundi 2 juin**
-- 🐍 **Python pour la sécurité** : 08:00 - 11:45  
+- 🐍 **Python pour la sécurité** : 09:00 - 11:45  
 - 🇬🇧 **Anglais Technique** : 13:00 - 15:00  
 - 🇬🇧 **Anglais Général** : 15:15 - 17:15  
 
