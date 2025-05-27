@@ -5,7 +5,7 @@
 #### 🔹 Définitions :
 
 * Somme partielle :
-  Sn = somme de k=0 à n de u\_k
+  Sn = somme de k=0 à n de u\git _k
 
 #### 🔹 Formules usuelles :
 

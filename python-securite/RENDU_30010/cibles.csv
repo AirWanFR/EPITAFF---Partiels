@@ -1,0 +1,11 @@
+order_number,name,postal_code,city,street_address,complement,phone,email,delivery_date,timeslot
+XZ7249320156MP,Claire Laurent,75001,Paris,12 Rue de Rivoli,2e étage,0612345678,claire.laurent@example.com,2025-05-17,10:00-12:00
+KP1093847219GC,Marc Dubois,69003,Lyon,7 Rue Garibaldi,Bâtiment A,0678123456,marc.dubois@example.com,2025-05-19,08:00-10:00
+BV2039485617QL,Sophie Morel,13001,Marseille,23 Avenue de la République,Interphone 42,0665123987,sophie.morel@example.com,2025-05-21,14:00-16:00
+HR8765432901UV,Lucas Lefevre,31000,Toulouse,15 Rue Alsace Lorraine,3e étage gauche,0654321987,lucas.lefevre@example.com,2025-05-22,16:00-18:00
+TE9238475610XY,Julie Fontaine,44000,Nantes,9 Boulevard de la Liberté,Bâtiment B,0611987432,julie.fontaine@example.com,2025-05-24,12:00-14:00
+LK4509832147TR,Antoine Petit,67000,Strasbourg,34 Rue des Francs-Bourgeois,Code porte 1234,0678921345,antoine.petit@example.com,2025-05-27,08:00-10:00
+WA8392014785SN,Emma Lambert,59000,Lille,8 Rue Nationale,RDC à gauche,0654312876,emma.lambert@example.com,2025-05-29,14:00-16:00
+NJ7203948571EQ,Hugo Girard,06000,Nice,42 Promenade des Anglais,5e étage,0665432109,hugo.girard@example.com,2025-06-01,16:00-18:00
+CR5918372401JD,Manon Roux,21000,Dijon,17 Rue de la Liberté,Apt 301,0623456781,manon.roux@example.com,2025-06-03,10:00-12:00
+YU1847293058LK,Théo Blanc,37000,Tours,3 Avenue de Grammont,Bâtiment C,0687654321,theo.blanc@example.com,2025-06-05,12:00-14:00

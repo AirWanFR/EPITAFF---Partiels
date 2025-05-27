@@ -1,0 +1,108 @@
+
+/*
+NEW - ADDED
+*/
+.displaying {
+	display: block;
+}
+
+.not-displaying {
+	display: none;
+}
+
+a.link_tic {
+	text-decoration: underline;
+	color: #009adf;
+}
+
+span.mandatorised {
+	color: #009adf;
+}
+
+/*
+OLD
+*/
+
+/* MAD : Pour ne pas afficher touts les point relais */
+li.hidden {
+    display: none;
+}
+
+.popin {
+	position: absolute;
+	padding: 5px;
+	right: 5px;
+	background-color: #fff;
+	z-index: 999999;
+	min-width: 150px;
+	max-width: 920px;
+	text-align: left;
+	font-size: 1.1em;
+	display: none;
+	-webkit-box-shadow: 2px 4px 4px 0px #848282;
+	-moz-box-shadow: 2px 4px 4px 0px #848282;
+	box-shadow: 2px 4px 4px 0px #848282;
+}
+
+.popin h1 {
+	background-color: #0060a2;
+	padding: 7px 15px;
+	font-size: 1.09em;
+	color: #fff;
+}
+
+.closePopin {
+	position: absolute;
+	top: -13px;
+	right: -15px;
+	width: 31px;
+	height: 32px;
+	background-position: 0 -559px;
+}
+
+.popin.popinHelp {
+	min-width: 200px;
+	max-width: 400px;
+}
+
+.popin.popinHelp div {
+	padding: 10px 0;
+	font-size: 1.2em;
+}
+
+.popin#popinRelais {
+	max-width: 250px;
+}
+
+.popinContent {
+	padding: 10px 15px;
+}
+
+.popinContent span {
+	line-height: 120%;
+}
+
+.closeOpeningHours {
+	color: red;
+	font-weight:bold;
+	margin-left: 265px;
+}
+
+.popinContent .openingHours li {
+	margin: 5px 0;
+}
+
+.popinContent .openingHours li strong {
+	padding-right: 5px;
+}
+
+.cs-content textarea.CBError {
+  outline: 0;
+  -webkit-box-shadow: inherit;
+  box-shadow: inherit;
+  border-bottom: 2px solid red !important;
+}
+
+.duplication {
+	cursor: pointer;
+}

