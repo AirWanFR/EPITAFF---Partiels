@@ -31,8 +31,6 @@ Ce dépôt contient les ressources de cours et supports associés pour la pério
 /cours-partiels-juin2025/
 │
 ├── python-securite/
-├── anglais-technique/
-├── anglais-general/
 ├── analyse-maths/
 ├── electronique-electricite/
 ├── archi-ordinateurs/
