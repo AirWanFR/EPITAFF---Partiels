@@ -15,14 +15,14 @@ Ce dépôt contient les ressources de cours et supports associés pour la pério
 - 💻 [**Architecture des ordinateurs**](https://github.com/AirWanFR/EPITAFF-Partiels/tree/master/archi-ordinateurs) : 15:15 - 16:15  
 
 ### **Mercredi 4 juin**
-- 📈 **Performance et mémoire en langage C** : 09:00 - 11:45  
-- 🐧 **Système d'exploitation Linux** : 12:00 - 13:30  
+- 📈 [**Performance et mémoire en langage C**](https://github.com/AirWanFR/EPITAFF-Partiels/tree/master/performance-C) : 09:00 - 11:45  
+- 🐧 [**Système d'exploitation Linux**](https://github.com/AirWanFR/EPITAFF-Partiels/tree/master/systeme-linux) : 12:00 - 13:30  
 - 🧠 [**Algorithmique et structures de données**](https://github.com/AirWanFR/EPITAFF-Partiels/tree/master/algorithmique) : 14:30 - 17:15  
 
 ### **Jeudi 5 juin**
-- 🌐 **Réseaux 2** : 09:00 - 11:45  
+- 🌐 [**Réseaux 2**]((https://github.com/AirWanFR/EPITAFF-Partiels/tree/master/reseau-2) : 09:00 - 11:45  
 - 🔢 [**Arithmétique pour la cryptographie**](https://github.com/AirWanFR/EPITAFF-Partiels/tree/master/arithmetique-crypto) : 13:00 - 15:45  
-- 🛠️ **Administration Linux** : 16:00 - 18:45  
+- 🛠️ [**Administration Linux**](https://github.com/AirWanFR/EPITAFF-Partiels/tree/master/admin-linux) : 16:00 - 18:45  
 
 ## 📁 Structure du dépôt
 
