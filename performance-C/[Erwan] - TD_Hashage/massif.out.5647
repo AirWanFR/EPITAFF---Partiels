@@ -1,0 +1,986 @@
+desc: (none)
+cmd: ./test
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=4942675
+mem_heap_B=112060
+mem_heap_extra_B=75756
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=9001588
+mem_heap_B=157094
+mem_heap_extra_B=116874
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=14656340
+mem_heap_B=228478
+mem_heap_extra_B=152138
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=18649346
+mem_heap_B=255228
+mem_heap_extra_B=176556
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=23361925
+mem_heap_B=279056
+mem_heap_extra_B=198312
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=26405785
+mem_heap_B=296766
+mem_heap_extra_B=214482
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=32053691
+mem_heap_B=320180
+mem_heap_extra_B=235860
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=36264033
+mem_heap_B=340926
+mem_heap_extra_B=254802
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=39140379
+mem_heap_B=478046
+mem_heap_extra_B=260338
+mem_stacks_B=0
+heap_tree=detailed
+n4: 478046 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 196608 0x109C9E: ajouter (dictionnaire.c:75)
+  n0: 196608 0x1096CA: main (test.c:84)
+ n2: 147456 0x109D7B: ajouter (dictionnaire.c:96)
+  n0: 147384 0x1096CA: main (test.c:84)
+  n0: 72 in 3 places, all below massif's threshold (1.00%)
+ n3: 132942 0x490D35E: strdup (strdup.c:42)
+  n2: 72621 0x109DAF: ajouter (dictionnaire.c:101)
+   n0: 72582 0x1096CA: main (test.c:84)
+   n0: 39 in 3 places, all below massif's threshold (1.00%)
+  n2: 60321 0x109D99: ajouter (dictionnaire.c:100)
+   n0: 60300 0x1096CA: main (test.c:84)
+   n0: 21 in 3 places, all below massif's threshold (1.00%)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n0: 1040 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=10
+#-----------
+time=44519556
+mem_heap_B=431210
+mem_heap_extra_B=277398
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=50460699
+mem_heap_B=455774
+mem_heap_extra_B=299842
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=54198285
+mem_heap_B=467182
+mem_heap_extra_B=310258
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=58561627
+mem_heap_B=481028
+mem_heap_extra_B=322900
+mem_stacks_B=0
+heap_tree=detailed
+n4: 481028 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 183216 0x109D7B: ajouter (dictionnaire.c:96)
+  n0: 183144 0x1096CA: main (test.c:84)
+  n0: 72 in 3 places, all below massif's threshold (1.00%)
+ n3: 165700 0x490D35E: strdup (strdup.c:42)
+  n2: 90489 0x109DAF: ajouter (dictionnaire.c:101)
+   n0: 90450 0x1096CA: main (test.c:84)
+   n0: 39 in 3 places, all below massif's threshold (1.00%)
+  n2: 75211 0x109D99: ajouter (dictionnaire.c:100)
+   n0: 75190 0x1096CA: main (test.c:84)
+   n0: 21 in 3 places, all below massif's threshold (1.00%)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 131072 0x109C9E: ajouter (dictionnaire.c:75)
+  n0: 131072 0x1096CA: main (test.c:84)
+ n0: 1040 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=14
+#-----------
+time=63566067
+mem_heap_B=500578
+mem_heap_extra_B=340750
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=69795510
+mem_heap_B=517460
+mem_heap_extra_B=356164
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=74131912
+mem_heap_B=530800
+mem_heap_extra_B=368344
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=79097256
+mem_heap_B=548096
+mem_heap_extra_B=384136
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=83730114
+mem_heap_B=559366
+mem_heap_extra_B=394426
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=90689796
+mem_heap_B=578916
+mem_heap_extra_B=412276
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=93361034
+mem_heap_B=590033
+mem_heap_extra_B=422439
+mem_stacks_B=0
+heap_tree=detailed
+n4: 590033 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 240072 0x109D7B: ajouter (dictionnaire.c:96)
+  n0: 240000 0x1096CA: main (test.c:84)
+  n0: 72 in 3 places, all below massif's threshold (1.00%)
+ n3: 217849 0x490D35E: strdup (strdup.c:42)
+  n2: 118929 0x109DAF: ajouter (dictionnaire.c:101)
+   n0: 118890 0x1096CA: main (test.c:84)
+   n0: 39 in 3 places, all below massif's threshold (1.00%)
+  n2: 98911 0x109D99: ajouter (dictionnaire.c:100)
+   n0: 98890 0x1096CA: main (test.c:84)
+   n0: 21 in 3 places, all below massif's threshold (1.00%)
+  n0: 9 in 1 place, below massif's threshold (1.00%)
+ n1: 131072 0x109C9E: ajouter (dictionnaire.c:75)
+  n0: 131072 0x1096CA: main (test.c:84)
+ n0: 1040 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=21
+#-----------
+time=97972954
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=103742906
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=107242896
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=111901608
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=118866230
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=124656626
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=128133084
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=detailed
+n4: 590036 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 240072 0x109D7B: ajouter (dictionnaire.c:96)
+  n0: 240000 0x1096CA: main (test.c:84)
+  n0: 72 in 3 places, all below massif's threshold (1.00%)
+ n3: 217852 0x490D35E: strdup (strdup.c:42)
+  n2: 118929 0x109DAF: ajouter (dictionnaire.c:101)
+   n0: 118890 0x1096CA: main (test.c:84)
+   n0: 39 in 3 places, all below massif's threshold (1.00%)
+  n2: 98911 0x109D99: ajouter (dictionnaire.c:100)
+   n0: 98890 0x1096CA: main (test.c:84)
+   n0: 21 in 3 places, all below massif's threshold (1.00%)
+  n0: 12 in 1 place, below massif's threshold (1.00%)
+ n1: 131072 0x109C9E: ajouter (dictionnaire.c:75)
+  n0: 131072 0x1096CA: main (test.c:84)
+ n0: 1040 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=28
+#-----------
+time=131621684
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=136289030
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=141838654
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=detailed
+n4: 590036 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 240072 0x109D7B: ajouter (dictionnaire.c:96)
+  n0: 240000 0x1096CA: main (test.c:84)
+  n0: 72 in 3 places, all below massif's threshold (1.00%)
+ n3: 217852 0x490D35E: strdup (strdup.c:42)
+  n2: 118929 0x109DAF: ajouter (dictionnaire.c:101)
+   n0: 118890 0x1096CA: main (test.c:84)
+   n0: 39 in 3 places, all below massif's threshold (1.00%)
+  n2: 98911 0x109D99: ajouter (dictionnaire.c:100)
+   n0: 98890 0x1096CA: main (test.c:84)
+   n0: 21 in 3 places, all below massif's threshold (1.00%)
+  n0: 12 in 1 place, below massif's threshold (1.00%)
+ n1: 131072 0x109C9E: ajouter (dictionnaire.c:75)
+  n0: 131072 0x1096CA: main (test.c:84)
+ n0: 1040 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=31
+#-----------
+time=147408080
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=152962682
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=156682702
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=160376662
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=detailed
+n4: 590036 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 240072 0x109D7B: ajouter (dictionnaire.c:96)
+  n0: 240000 0x1096CA: main (test.c:84)
+  n0: 72 in 3 places, all below massif's threshold (1.00%)
+ n3: 217852 0x490D35E: strdup (strdup.c:42)
+  n2: 118929 0x109DAF: ajouter (dictionnaire.c:101)
+   n0: 118890 0x1096CA: main (test.c:84)
+   n0: 39 in 3 places, all below massif's threshold (1.00%)
+  n2: 98911 0x109D99: ajouter (dictionnaire.c:100)
+   n0: 98890 0x1096CA: main (test.c:84)
+   n0: 21 in 3 places, all below massif's threshold (1.00%)
+  n0: 12 in 1 place, below massif's threshold (1.00%)
+ n1: 131072 0x109C9E: ajouter (dictionnaire.c:75)
+  n0: 131072 0x1096CA: main (test.c:84)
+ n0: 1040 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=35
+#-----------
+time=164086094
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=169637228
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=175193460
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=178892224
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=detailed
+n4: 590036 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 240072 0x109D7B: ajouter (dictionnaire.c:96)
+  n0: 240000 0x1096CA: main (test.c:84)
+  n0: 72 in 3 places, all below massif's threshold (1.00%)
+ n3: 217852 0x490D35E: strdup (strdup.c:42)
+  n2: 118929 0x109DAF: ajouter (dictionnaire.c:101)
+   n0: 118890 0x1096CA: main (test.c:84)
+   n0: 39 in 3 places, all below massif's threshold (1.00%)
+  n2: 98911 0x109D99: ajouter (dictionnaire.c:100)
+   n0: 98890 0x1096CA: main (test.c:84)
+   n0: 21 in 3 places, all below massif's threshold (1.00%)
+  n0: 12 in 1 place, below massif's threshold (1.00%)
+ n1: 131072 0x109C9E: ajouter (dictionnaire.c:75)
+  n0: 131072 0x1096CA: main (test.c:84)
+ n0: 1040 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=39
+#-----------
+time=182604148
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=188163346
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=191905426
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=195641064
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=199339938
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=204900346
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=210448706
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=214149054
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=217869626
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=223433562
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=228970512
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=231643850
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=234323754
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=236998028
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=detailed
+n4: 590036 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 240072 0x109D7B: ajouter (dictionnaire.c:96)
+  n0: 240000 0x1096CA: main (test.c:84)
+  n0: 72 in 3 places, all below massif's threshold (1.00%)
+ n3: 217852 0x490D35E: strdup (strdup.c:42)
+  n2: 118929 0x109DAF: ajouter (dictionnaire.c:101)
+   n0: 118890 0x1096CA: main (test.c:84)
+   n0: 39 in 3 places, all below massif's threshold (1.00%)
+  n2: 98911 0x109D99: ajouter (dictionnaire.c:100)
+   n0: 98890 0x1096CA: main (test.c:84)
+   n0: 21 in 3 places, all below massif's threshold (1.00%)
+  n0: 12 in 1 place, below massif's threshold (1.00%)
+ n1: 131072 0x109C9E: ajouter (dictionnaire.c:75)
+  n0: 131072 0x1096CA: main (test.c:84)
+ n0: 1040 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=53
+#-----------
+time=239671480
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=242350876
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=245030418
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=247704324
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=250377882
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=253049460
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=255720786
+mem_heap_B=590036
+mem_heap_extra_B=422436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=258393441
+mem_heap_B=612661
+mem_heap_extra_B=446555
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=261065196
+mem_heap_B=659198
+mem_heap_extra_B=492858
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=265941691
+mem_heap_B=952773
+mem_heap_extra_B=522907
+mem_stacks_B=0
+heap_tree=detailed
+n4: 952773 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 393216 0x109C9E: ajouter (dictionnaire.c:75)
+  n0: 262144 0x1098F6: main (test.c:117)
+  n0: 131072 0x1096CA: main (test.c:84)
+ n3: 294912 0x109D7B: ajouter (dictionnaire.c:96)
+  n0: 240000 0x1096CA: main (test.c:84)
+  n0: 54840 0x1098F6: main (test.c:117)
+  n0: 72 in 3 places, all below massif's threshold (1.00%)
+ n3: 263605 0x490D35E: strdup (strdup.c:42)
+  n3: 145239 0x109DAF: ajouter (dictionnaire.c:101)
+   n0: 118890 0x1096CA: main (test.c:84)
+   n0: 26310 0x1098F6: main (test.c:117)
+   n0: 39 in 3 places, all below massif's threshold (1.00%)
+  n3: 118366 0x109D99: ajouter (dictionnaire.c:100)
+   n0: 98890 0x1096CA: main (test.c:84)
+   n0: 19455 0x1098F6: main (test.c:117)
+   n0: 21 in 3 places, all below massif's threshold (1.00%)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n0: 1040 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=63
+#-----------
+time=268616596
+mem_heap_B=845890
+mem_heap_extra_B=546006
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=271291495
+mem_heap_B=867040
+mem_heap_extra_B=566216
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=273964079
+mem_heap_B=883780
+mem_heap_extra_B=582212
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=276636933
+mem_heap_B=901870
+mem_heap_extra_B=599498
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=279316559
+mem_heap_B=915280
+mem_heap_extra_B=612312
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=281994996
+mem_heap_B=928195
+mem_heap_extra_B=624653
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=284669108
+mem_heap_B=942775
+mem_heap_extra_B=638585
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=70
+#-----------
+time=287341364
+mem_heap_B=954745
+mem_heap_extra_B=650023
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=290017771
+mem_heap_B=965095
+mem_heap_extra_B=659913
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=72
+#-----------
+time=292702469
+mem_heap_B=976300
+mem_heap_extra_B=670620
+mem_stacks_B=0
+heap_tree=detailed
+n4: 976300 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 377376 0x109D7B: ajouter (dictionnaire.c:96)
+  n0: 240000 0x1096CA: main (test.c:84)
+  n0: 137304 0x1098F6: main (test.c:117)
+  n0: 72 in 3 places, all below massif's threshold (1.00%)
+ n3: 335740 0x490D35E: strdup (strdup.c:42)
+  n3: 186459 0x109DAF: ajouter (dictionnaire.c:101)
+   n0: 118890 0x1096CA: main (test.c:84)
+   n0: 67530 0x1098F6: main (test.c:117)
+   n0: 39 in 3 places, all below massif's threshold (1.00%)
+  n3: 149281 0x109D99: ajouter (dictionnaire.c:100)
+   n0: 98890 0x1096CA: main (test.c:84)
+   n0: 50370 0x1098F6: main (test.c:117)
+   n0: 21 in 3 places, all below massif's threshold (1.00%)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n2: 262144 0x109C9E: ajouter (dictionnaire.c:75)
+  n0: 262144 0x1098F6: main (test.c:117)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n0: 1040 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=73
+#-----------
+time=295376341
+mem_heap_B=989620
+mem_heap_extra_B=683348
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=74
+#-----------
+time=298050300
+mem_heap_B=998755
+mem_heap_extra_B=692077
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=75
+#-----------
+time=300732743
+mem_heap_B=1007665
+mem_heap_extra_B=700591
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=76
+#-----------
+time=303409957
+mem_heap_B=1016890
+mem_heap_extra_B=709406
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=77
+#-----------
+time=306091318
+mem_heap_B=1027195
+mem_heap_extra_B=719253
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=78
+#-----------
+time=308766372
+mem_heap_B=1038040
+mem_heap_extra_B=729616
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=79
+#-----------
+time=311450146
+mem_heap_B=1045780
+mem_heap_extra_B=737012
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=80
+#-----------
+time=314121394
+mem_heap_B=1053619
+mem_heap_extra_B=744509
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=81
+#-----------
+time=316807961
+mem_heap_B=1062025
+mem_heap_extra_B=752535
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=82
+#-----------
+time=319491157
+mem_heap_B=1071475
+mem_heap_extra_B=761565
+mem_stacks_B=0
+heap_tree=detailed
+n4: 1071475 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 428136 0x109D7B: ajouter (dictionnaire.c:96)
+  n0: 240000 0x1096CA: main (test.c:84)
+  n0: 188064 0x1098F6: main (test.c:117)
+  n0: 72 in 3 places, all below massif's threshold (1.00%)
+ n3: 380155 0x490D35E: strdup (strdup.c:42)
+  n3: 211839 0x109DAF: ajouter (dictionnaire.c:101)
+   n0: 118890 0x1096CA: main (test.c:84)
+   n0: 92910 0x1098F6: main (test.c:117)
+   n0: 39 in 3 places, all below massif's threshold (1.00%)
+  n3: 168316 0x109D99: ajouter (dictionnaire.c:100)
+   n0: 98890 0x1096CA: main (test.c:84)
+   n0: 69405 0x1098F6: main (test.c:117)
+   n0: 21 in 3 places, all below massif's threshold (1.00%)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n2: 262144 0x109C9E: ajouter (dictionnaire.c:75)
+  n0: 262144 0x1098F6: main (test.c:117)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n0: 1040 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=83
+#-----------
+time=322170956
+mem_heap_B=1081825
+mem_heap_extra_B=771455
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=84
+#-----------
+time=324843698
+mem_heap_B=1088800
+mem_heap_extra_B=778120
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=85
+#-----------
+time=327534095
+mem_heap_B=1095595
+mem_heap_extra_B=784613
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=86
+#-----------
+time=330209900
+mem_heap_B=1102930
+mem_heap_extra_B=791622
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=87
+#-----------
+time=332892238
+mem_heap_B=1111300
+mem_heap_extra_B=799620
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=88
+#-----------
+time=335576693
+mem_heap_B=1120930
+mem_heap_extra_B=808822
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=89
+#-----------
+time=338257360
+mem_heap_B=1129075
+mem_heap_extra_B=816605
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=90
+#-----------
+time=340946920
+mem_heap_B=1135150
+mem_heap_extra_B=822410
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=91
+#-----------
+time=343629102
+mem_heap_B=1141900
+mem_heap_extra_B=828860
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=92
+#-----------
+time=346317146
+mem_heap_B=1148380
+mem_heap_extra_B=835052
+mem_stacks_B=0
+heap_tree=detailed
+n4: 1148380 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 469152 0x109D7B: ajouter (dictionnaire.c:96)
+  n0: 240000 0x1096CA: main (test.c:84)
+  n0: 229080 0x1098F6: main (test.c:117)
+  n0: 72 in 3 places, all below massif's threshold (1.00%)
+ n3: 416044 0x490D35E: strdup (strdup.c:42)
+  n3: 232347 0x109DAF: ajouter (dictionnaire.c:101)
+   n0: 118890 0x1096CA: main (test.c:84)
+   n0: 113418 0x1098F6: main (test.c:117)
+   n0: 39 in 3 places, all below massif's threshold (1.00%)
+  n3: 183697 0x109D99: ajouter (dictionnaire.c:100)
+   n0: 98890 0x1096CA: main (test.c:84)
+   n0: 84786 0x1098F6: main (test.c:117)
+   n0: 21 in 3 places, all below massif's threshold (1.00%)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n2: 262144 0x109C9E: ajouter (dictionnaire.c:75)
+  n0: 262144 0x1098F6: main (test.c:117)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n0: 1040 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=93
+#-----------
+time=349011854
+mem_heap_B=1156390
+mem_heap_extra_B=842706
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=94
+#-----------
+time=351693165
+mem_heap_B=1165750
+mem_heap_extra_B=851650
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=95
+#-----------
+time=439317423
+mem_heap_B=1168876
+mem_heap_extra_B=854644
+mem_stacks_B=0
+heap_tree=peak
+n4: 1168876 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 480072 0x109D7B: ajouter (dictionnaire.c:96)
+  n0: 240000 0x1096CA: main (test.c:84)
+  n0: 240000 0x1098F6: main (test.c:117)
+  n0: 72 in 3 places, all below massif's threshold (1.00%)
+ n3: 425620 0x490D35E: strdup (strdup.c:42)
+  n3: 237819 0x109DAF: ajouter (dictionnaire.c:101)
+   n0: 118890 0x1096CA: main (test.c:84)
+   n0: 118890 0x1098F6: main (test.c:117)
+   n0: 39 in 3 places, all below massif's threshold (1.00%)
+  n3: 187801 0x109D99: ajouter (dictionnaire.c:100)
+   n0: 98890 0x1096CA: main (test.c:84)
+   n0: 88890 0x1098F6: main (test.c:117)
+   n0: 21 in 3 places, all below massif's threshold (1.00%)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n2: 262144 0x109C9E: ajouter (dictionnaire.c:75)
+  n0: 262144 0x1098F6: main (test.c:117)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n0: 1040 in 3 places, all below massif's threshold (1.00%)
