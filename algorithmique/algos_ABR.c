@@ -46,15 +46,17 @@ int BSTsearchIter(struct node *T, int val)
         {
             T = T->fd;
         }
-        if (T == NULL)
-        {
-            return -1;
-        }
-        else
-        {
-            return T->cle;
-        }
     }
+
+    if (T == NULL)
+    {
+        return -1;
+    }
+    else
+    {
+        return T->cle;
+    }
+    
 }
 
 struct node *insert_BST_Leaf(struct node *R, int val) // pas opti
