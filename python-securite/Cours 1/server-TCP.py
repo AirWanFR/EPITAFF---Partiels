@@ -15,5 +15,5 @@ while True:
     message = "Hello!\r\n"
     client.send(message.encode('ascii'))
     print(f"Sent TCP to {client} {address}")
-    client.close()
+   giyt client.close()
     print(f"Closed TCP with {client} {address}")
