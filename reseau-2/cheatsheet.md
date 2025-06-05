@@ -1,237 +1,330 @@
-# Cheat Sheet Cisco Packet Tracer — Explications détaillées & Exemples
+# Cheat Sheet Cisco Packet Tracer — Explications détaillées, Exemples et Syntaxe
 
 ---
 
 ## 1. Modes de configuration
 
 - **enable**  
-  Passe du mode utilisateur (user EXEC) au mode privilégié (privileged EXEC), nécessaire pour modifier la configuration.
+  Passe en mode privilégié (EXEC).  
+  **Syntaxe :**  
+  ```
+  enable
+  ```
 
 - **configure terminal** (`conf t`)  
-  Permet d’entrer en mode de configuration globale pour modifier les paramètres du routeur ou switch.
+  Passe en mode de configuration globale.  
+  **Syntaxe :**  
+  ```
+  configure terminal
+  ```
+  ou, plus court :
+  ```
+  conf t
+  ```
 
 - **exit**  
-  Permet de sortir du mode actuel (ex : sortir du mode interface pour revenir au mode global).
+  Sort du mode courant.  
+  **Syntaxe :**  
+  ```
+  exit
+  ```
 
 - **end**  
-  Permet de revenir directement au mode privilégié depuis n’importe quel mode de configuration.
+  Retourne directement en mode EXEC privilégié.  
+  **Syntaxe :**  
+  ```
+  end
+  ```
 
 - **write** / **copy running-config startup-config**  
-  Sauvegarde la configuration en cours (running-config) dans la NVRAM (startup-config), pour la conserver après un redémarrage.
-
-**Exemple :**
-```shell
-enable
-configure terminal
-!
-exit
-write
-```
+  Sauvegarde la configuration active.  
+  **Syntaxe :**  
+  ```
+  write
+  ```
+  ou  
+  ```
+  copy running-config startup-config
+  ```
 
 ---
 
-## 2. Configuration du nom d’hôte
+## 2. Changer le nom de l'appareil (hostname)
 
-```shell
+**Syntaxe :**  
+```
+hostname <nom>
+```
+**Exemple :**  
+```
 hostname SW1
 ```
-Donne le nom "SW1" à l’équipement (ici un switch).
 
 ---
 
-## 3. Configuration des interfaces
+## 3. Configuration d'une interface IP
 
-```shell
-interface g0/1
-ip address 192.168.1.1 255.255.255.0
-no shutdown
+**Syntaxe :**  
+```
+interface <type><num>
+ ip address <ip> <mask>
+ no shutdown
 exit
 ```
-- Attribue l’IP `192.168.1.1/24` à l’interface GigabitEthernet0/1 et l’active.
-
-**Exemple sur plusieurs interfaces :**
-```shell
+**Exemple :**  
+```
 interface g0/1
-ip address 10.0.0.1 255.255.255.252
-no shutdown
-exit
-interface g0/2
-ip address 192.168.10.1 255.255.255.0
-no shutdown
+ ip address 192.168.1.1 255.255.255.0
+ no shutdown
 exit
 ```
 
 ---
 
-## 4. Configuration d’une interface Loopback
+## 4. Créer une interface Loopback
 
-```shell
+**Syntaxe :**  
+```
+interface loopback<num>
+ ip address <ip> <mask>
+exit
+```
+**Exemple :**  
+```
 interface loopback0
-ip address 1.1.1.1 255.255.255.255
+ ip address 1.1.1.1 255.255.255.255
 exit
 ```
-- Crée une interface virtuelle toujours UP, utile pour les tests ou en tant qu'ID du routeur.
 
 ---
 
 ## 5. VLAN
 
-### Création et configuration :
-```shell
+### a) Créer un VLAN
+
+**Syntaxe :**  
+```
+vlan <num>
+ name <nom>
+exit
+```
+**Exemple :**  
+```
 vlan 10
-name SERVEURS
+ name SERVEURS
 exit
 ```
 
-### Affecter un VLAN à un port :
-```shell
+### b) Affecter un port à un VLAN
+
+**Syntaxe :**  
+```
+interface <type><num>
+ switchport mode access
+ switchport access vlan <num>
+exit
+```
+**Exemple :**  
+```
 interface f0/2
-switchport mode access
-switchport access vlan 10
+ switchport mode access
+ switchport access vlan 10
 exit
 ```
 
-### Trunk :
-```shell
+### c) Placer un port en trunk (multi-VLANs)
+
+**Syntaxe :**  
+```
+interface <type><num>
+ switchport mode trunk
+ switchport trunk allowed vlan <liste_vlan>
+exit
+```
+**Exemple :**  
+```
 interface g0/1
-switchport mode trunk
-switchport trunk allowed vlan 10,20,30
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,30
 exit
 ```
 
 ---
 
-## 6. Routage statique
+## 6. Trunk & Encapsulation Dot1Q (Router-on-a-Stick)
 
-```shell
+Pour router entre VLANs sur un seul port :
+
+**Syntaxe :**  
+```
+interface <type><num>.<sousif>
+ encapsulation dot1Q <vlan>
+ ip address <ip> <mask>
+exit
+```
+**Exemple :**  
+```
+interface g0/1.10
+ encapsulation dot1Q 10
+ ip address 192.168.10.254 255.255.255.0
+exit
+```
+
+---
+
+## 7. Routage statique
+
+**Syntaxe :**  
+```
+ip route <réseau_dest> <masque> <next-hop>
+```
+**Exemple :**  
+```
 ip route 192.168.2.0 255.255.255.0 10.0.0.2
 ```
-- Route tout le trafic destiné au réseau `192.168.2.0/24` via 10.0.0.2 (next-hop).
 
 ---
 
-## 7. DHCP (Dynamic Host Configuration Protocol)
+## 8. DHCP (serveur sur routeur)
 
-Permet d’attribuer automatiquement des adresses IP aux clients du réseau.
+**a) Exclure des adresses de la distribution**
 
-### Configuration de base d’un serveur DHCP sur un routeur :
-
-```shell
+**Syntaxe :**  
+```
+ip dhcp excluded-address <ip_debut> [ip_fin]
+```
+**Exemple :**  
+```
 ip dhcp excluded-address 192.168.1.1 192.168.1.10
+```
+
+**b) Créer un pool DHCP**
+
+**Syntaxe :**  
+```
+ip dhcp pool <nom>
+ network <réseau> <masque>
+ default-router <ip_pass>
+ dns-server <ip_dns>
+ lease <jours>
+```
+**Exemple :**  
+```
 ip dhcp pool LAN
  network 192.168.1.0 255.255.255.0
  default-router 192.168.1.1
  dns-server 8.8.8.8
  lease 7
 ```
-- **ip dhcp excluded-address** : Plage d’adresses à ne pas attribuer (réservées à des serveurs, imprimantes, etc.).
-- **ip dhcp pool [Nom]** : Crée un pool DHCP nommé.
-- **network** : Précise le réseau et le masque utilisé pour la distribution.
-- **default-router** : Adresse de la passerelle à fournir aux clients.
-- **dns-server** : Adresse du serveur DNS à fournir aux clients.
-- **lease [jours]** : Durée du bail d’adresse IP (en jours).
-
-**Exemple complet :**
-```shell
-ip dhcp excluded-address 192.168.1.1 192.168.1.10
-ip dhcp pool LAN
- network 192.168.1.0 255.255.255.0
- default-router 192.168.1.1
- dns-server 8.8.8.8
- lease 7
-```
-
-Pour vérifier les baux actifs :
-```shell
-show ip dhcp binding
-```
 
 ---
 
-## 8. Ping & Tests de connectivité
+## 9. Sécurité de base (mots de passe)
 
-- **ping [adresse_ip]**  
-  Permet de vérifier la connectivité.
-  ```shell
-  ping 8.8.8.8
-  ```
-
-- **traceroute [adresse_ip]**  
-  Affiche le chemin des paquets.
-  ```shell
-  traceroute 8.8.8.8
-  ```
-
----
-
-## 9. Affichage & Dépannage
-
-| Commande                | Explication                                    |
-|-------------------------|------------------------------------------------|
-| show running-config     | Montre la configuration active en mémoire      |
-| show startup-config     | Montre la configuration sauvegardée (NVRAM)    |
-| show ip interface brief | Résumé des interfaces et IP                    |
-| show vlan brief         | Liste des VLANs configurés                     |
-| show interfaces         | Détails techniques des interfaces              |
-| show version            | Infos matérielles et logicielles de l’équipement |
-
-**Exemples :**
-```shell
-show ip interface brief
-show vlan brief
-show running-config
+**Syntaxe :**  
 ```
-
----
-
-## 10. Sécurité de base
-
-```shell
-enable secret cisco123
+enable secret <motdepasse>
 line console 0
-password consolepass
-login
+ password <motdepasse>
+ login
 exit
 line vty 0 4
-password vtypass
-login
+ password <motdepasse>
+ login
 exit
 service password-encryption
 ```
-- Mot de passe pour l’accès privilégié, la console et les accès distants (telnet/ssh).
+**Exemple :**  
+```
+enable secret cisco123
+line console 0
+ password consolepass
+ login
+exit
+line vty 0 4
+ password vtypass
+ login
+exit
+service password-encryption
+```
 
 ---
 
-## 11. Subnetting rapide
+## 10. Vérification & dépannage
 
-| Masque CIDR | Masque décimal        | Nb d’adresses / sous-réseau |
-|-------------|-----------------------|-----------------------------|
-| /24         | 255.255.255.0         | 256                         |
-| /25         | 255.255.255.128       | 128                         |
-| /26         | 255.255.255.192       | 64                          |
-| /30         | 255.255.255.252       | 4                           |
+**Syntaxes utiles :**
+- Afficher config active :
+  ```
+  show running-config
+  ```
+- Afficher config sauvegardée :
+  ```
+  show startup-config
+  ```
+- Résumé des interfaces :
+  ```
+  show ip interface brief
+  ```
+- Voir les VLANs :
+  ```
+  show vlan brief
+  ```
+- Infos interfaces détaillées :
+  ```
+  show interfaces
+  ```
+- Table MAC (sur switch) :
+  ```
+  show mac address-table
+  ```
+- Version IOS :
+  ```
+  show version
+  ```
 
+---
+
+## 11. Ping & Traceroute
+
+**Syntaxes :**
+```
+ping <ip>
+traceroute <ip>
+```
 **Exemple :**
-Pour découper 192.168.1.0/24 en sous-réseaux de 64 adresses :
-- 192.168.1.0/26 : 192.168.1.0 – 192.168.1.63
-- 192.168.1.64/26 : 192.168.1.64 – 192.168.1.127
-- etc.
+```
+ping 8.8.8.8
+traceroute 8.8.8.8
+```
 
 ---
 
-## 12. Divers
+## 12. Commandes diverses
 
 | Commande                        | Utilité                       |
 |----------------------------------|-------------------------------|
 | reload                          | Redémarre l’appareil          |
 | erase startup-config             | Efface la configuration NVRAM |
-| clock set 19:10:00 4 JUN 2025   | Définit la date/heure         |
+| clock set <HH:MM:SS> <JJ> <MON> <AAAA> | Définit l’heure |
 
 ---
 
-## 13. Astuce
+## 13. Subnetting rapide
 
-- Utilise `?` après une commande partielle pour voir les options possibles.
+| CIDR  | Masque décimal       | Nb d’adresses | Nb hôtes utilisables |
+|-------|----------------------|---------------|---------------------|
+| /24   | 255.255.255.0        | 256           | 254                 |
+| /25   | 255.255.255.128      | 128           | 126                 |
+| /26   | 255.255.255.192      | 64            | 62                  |
+| /27   | 255.255.255.224      | 32            | 30                  |
+| /28   | 255.255.255.240      | 16            | 14                  |
+| /30   | 255.255.255.252      | 4             | 2                   |
+
+---
+
+## 14. Astuces
+
+- Utilise `?` à n’importe quel moment pour voir les options possibles.
 - Utilise la touche TAB pour compléter automatiquement les commandes.
 
 ---
